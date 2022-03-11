@@ -56,7 +56,7 @@ Add custom emojis and extra color values by using this format:
 
 ## Examples
 
-Events format
+#### Events format
 ```js
 module.exports = {
 	name: 'eventName',
@@ -66,8 +66,9 @@ module.exports = {
 	},
 }
 ```
+---
 
-Slash commands format
+#### Slash commands format
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
 module.exports = {
@@ -79,8 +80,9 @@ module.exports = {
 	}
 } 
 ```
+---
 
-Context menus format
+#### Context menus format
 ```js
 const { ContextMenuCommandBuilder } = require('@discordjs/builders');
 module.exports = {
@@ -92,8 +94,10 @@ module.exports = {
 	},
 }
 ```
+---
 
-Buttons format
+#### Buttons format
+
 Adding buttons to a message:
 ```js
 const { MessageButton, MessageActionRow } = require('discord.js')
@@ -122,8 +126,10 @@ module.exports = {
 			})
 		}
 ```
+---
 
-Select menu format
+#### Select menu format
+
 Adding select menu to a message:
 ```js
 const { MessageSelectMenu, MessageActionRow } = require('discord.js')
@@ -166,8 +172,9 @@ module.exports = {
 	},
 }
 ```
+---
 
-Permissions/Cooldown format
+#### Permissions/Cooldown format
   
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
@@ -184,8 +191,9 @@ module.exports = {
 	}
 }
 ```
+---
 
-Legacy commands format
+#### Legacy commands format
 ```js
 module.exports = {
 	name: 'commandName',
