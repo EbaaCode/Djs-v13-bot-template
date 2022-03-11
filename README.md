@@ -1,8 +1,9 @@
 ![Logo](https://i.imgur.com/89Lv73l.png)
 ---
-<p style="text-align: center;">
-
-![Version](https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white) ![License](https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white) [![ko-fi](https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/B0B73WFJT)
+<p align="center">
+	<img src="https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white" alt="Version" />
+	<img src="https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white" alt="License" />
+	<a href="https://ko-fi.com/B0B73WFJT"><img src="https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white" alt="Ko-fi" /><a>
 </p>
 
 This Discord.js Template was designed to make building a Discord bot as simple as possible. Eliminate the hassle of setting up a new project with all the structures and handlers and get right to work on your bot with reusable embeds, dynamic handlers and a config file to customize everything!
@@ -33,7 +34,7 @@ errorEmbed(interaction, 'Error embed example description', 'Error embed example 
 
 Clone or Download this repository then get the dependencies by running:
 
-```bash
+```sh-session
   npm install
 ```
 
@@ -63,116 +64,120 @@ Add custom emojis and extra color values by using this format:
 
 ```js
 module.exports = {
-	name: 'eventName',
-	once: 'true', //run once true/false
-	async execute(<args>) {
-    //Code
-	},
+    name: 'eventName',
+    once: 'true', //run once true/false
+    async execute( < args > ) {
+        //Code
+    },
 }
 ```
+---
 </details>
 
 <details>
   <summary>Slash commands format</summary>
 
 ```js
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('@discordjs/builders') 
+
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('commandName')
-		.setDescription('command description'),
-	async execute(<args>) {
-    // Code
-	}
-} 
+    data: new SlashCommandBuilder()
+        .setName('commandName')
+        .setDescription('command description'),
+    async execute( < args > ) {
+        // Code
+    }
+}
 ```
+---
 </details>
 
 <details>
   <summary>Context menus format</summary>
   
 ```js
-const { ContextMenuCommandBuilder } = require('@discordjs/builders');
+const { ContextMenuCommandBuilder } = require('@discordjs/builders')
+
 module.exports = {
-	data: new ContextMenuCommandBuilder()
-		.setName('context-menu-name')
-		.setType(2), // (2): USER , (3): MESSAGE
-	async execute(<args>) {
-		// Code
-	},
+    data: new ContextMenuCommandBuilder()
+        .setName('context-menu-name')
+        .setType(2), // (2): USER , (3): MESSAGE
+    async execute( < args > ) {
+        // Code
+    },
 }
 ```
+---
 </details>
 
 <details>
   <summary>Buttons format</summary>
-  
+
 Adding buttons to a message:
 ```js
-const { MessageButton, MessageActionRow } = require('discord.js')
-module.exports = {
-		let exampleButton = new MessageButton()
-			.setLabel('Example')
-			.setStyle('PRIMARY') // PRIMARY, SECONDARY, SUCCESS, DANGER, LINK
-			.setCustomId('example_button')
-  const row = new MessageActionRow().addComponents(exampleButton)
+const { MessageButton, MessageActionRow } = require('discord.js') // At the top of the file.
 
-  interaction.reply({
-			content: 'Example message',
-			components: [row],
-		})
-}
+let exampleButton = new MessageButton()
+    .setLabel('Example')
+    .setStyle('PRIMARY') // PRIMARY, SECONDARY, SUCCESS, DANGER, LINK
+    .setCustomId('example_button')
+const row = new MessageActionRow().addComponents(exampleButton)
+interaction.reply({
+    content: 'Example message',
+    components: [row],
+})
 ```
 
-Button event:
+Button event format:
 ```js
 module.exports = {
-	name: 'example_button',
-	aliases: ['aliase1_button', 'aliase2_button'],
-	async execute(interaction) {
-		if (interaction.customId == 'example_button') {
-			interaction.reply({
-				content: 'example button pressed.'
-			})
-		}
+    name: 'example_button',
+    aliases: ['aliase1_button', 'aliase2_button'],
+    async execute(interaction) {
+        if (interaction.customId == 'example_button') {
+            // Code
+        } else if (interaction.customId == 'aliase1_button') {
+            // Code
+        }
+    }
+}
 ```
+---
 </details>
 
 <details>
   <summary>Select menu format</summary>
-  
+	
 Adding select menu to a message:
 ```js
-const { MessageSelectMenu, MessageActionRow } = require('discord.js')
-module.exports = {
+const { MessageSelectMenu, MessageActionRow} = require('discord.js') // At the top of the file.
+
 let selectMenu = new MessageSelectMenu()
-            .setCustomId('select_example')
-            .setPlaceholder('Nothing selected')
-            .setMinValues(1)
-            .setMaxValues(2)
-			.addOptions([
-                {
-                    label: 'Option #1',
-                    description: 'This is a description for option #1',
-                    value: 'first_option',
-                    emoji: '1️⃣',
-                },
-                {
-                    label: 'Option #2',
-                    description: 'This is a description for option #2',
-                    value: 'second_option',
-                    emoji: '2️⃣',
-                }
-      ])
+    .setCustomId('select_example')
+    .setPlaceholder('Nothing selected')
+    .setMinValues(1)
+    .setMaxValues(2)
+    .addOptions([{
+            label: 'Option #1',
+            description: 'This is a description for option #1',
+            value: 'first_option',
+            emoji: '1️⃣',
+        },
+        {
+            label: 'Option #2',
+            description: 'This is a description for option #2',
+            value: 'second_option',
+            emoji: '2️⃣',
+        },
+    ])
 const row = new MessageActionRow().addComponents(selectMenu)
-  interaction.reply({
-			content: 'Example message',
-			components: [row],
-		})
-}
+interaction.reply({
+    content: 'Example message',
+    components: [row],
+})
 ```
 
-Select menu event:
+Select menu event format:
 ```js
 module.exports = {
 	name: 'select_example',
@@ -184,26 +189,29 @@ module.exports = {
 	},
 }
 ```
+---
 </details>
 
 <details>
   <summary>Permissions/Cooldown format</summary>
   
 ```js
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('@discordjs/builders')
+
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('perms-cooldown-example')
-		.setDescription('Permissions & Cooldown example'),
-	cooldown: 5000, // Time in milliseconds.
-  permissions: ['ADMINISTRATOR'],
-	async execute(interaction) {
-    interaction.reply({
-			content: 'You have permission to run this command!',
-		})
-	}
+    data: new SlashCommandBuilder()
+        .setName('perms-cooldown-example')
+        .setDescription('Permissions & Cooldown example'),
+    cooldown: 5000, // Time in milliseconds.
+    permissions: ['ADMINISTRATOR'],
+    async execute(interaction) {
+        interaction.reply({
+            content: 'You have permission to run this command!',
+        })
+    }
 }
 ```
+---
 </details>
 
 <details>
@@ -211,12 +219,12 @@ module.exports = {
   
 ```js
 module.exports = {
-	name: 'commandName',
-	aliases: ['aliase1', 'aliase2'],
-	description: 'command description',
-	async execute(message) {
-		// Code
-	},
+    name: 'commandName',
+    aliases: ['aliase1', 'aliase2'],
+    description: 'command description',
+    async execute(message) {
+        // Code
+    },
 }
 ```
 </details>
@@ -226,6 +234,10 @@ module.exports = {
 Join [this Discord server](https://discord.gg/HXQXSeYA3u) if you need any help.
 
 _Documentations coming soon._
+	
+## Contributing
+
+Before creating an [issue](https://github.com/EbaaCode/Djs-v13-bot-template/issues), please ensure that it hasn't already been reported/suggested You can also take a look at [the contributing guide](https://github.com/EbaaCode/Djs-v13-bot-template/blob/main/.github/CONTRIBUTING.md) if you'd like to submit a PR.
 
 ## Disclaimer
 
