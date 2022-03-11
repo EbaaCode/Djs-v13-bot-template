@@ -2,7 +2,7 @@
 ---
 <p style="text-align: center;">
 
-![Version](https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white)![License](https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white)[![ko-fi](https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/B0B73WFJT)
+![Version](https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white) ![License](https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white) [![ko-fi](https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/B0B73WFJT)
 </p>
 
 This Discord.js Template was designed to make building a Discord bot as simple as possible. Eliminate the hassle of setting up a new project with all the structures and handlers and get right to work on your bot with reusable embeds, dynamic handlers and a config file to customize everything!
