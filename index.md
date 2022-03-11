@@ -1,9 +1,7 @@
 ![Logo](https://i.imgur.com/89Lv73l.png)
 ---
-<p style="text-align: center;">
 
-![Version](https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white)![License](https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white)[![ko-fi](https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/B0B73WFJT)
-</p>
+![Version](https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white) ![License](https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white) [![ko-fi](https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/B0B73WFJT)
 
 This Discord.js Template was designed to make building a Discord bot as simple as possible. Eliminate the hassle of setting up a new project with all the structures and handlers and get right to work on your bot with reusable embeds, dynamic handlers and a config file to customize everything!
 
@@ -58,9 +56,7 @@ Add custom emojis and extra color values by using this format:
 
 ## Examples
 
-<details>
-  <summary>Events format</summary>
-
+Events format
 ```js
 module.exports = {
 	name: 'eventName',
@@ -70,11 +66,8 @@ module.exports = {
 	},
 }
 ```
-</details>
 
-<details>
-  <summary>Slash commands format</summary>
-
+Slash commands format
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
 module.exports = {
@@ -86,11 +79,8 @@ module.exports = {
 	}
 } 
 ```
-</details>
 
-<details>
-  <summary>Context menus format</summary>
-  
+Context menus format
 ```js
 const { ContextMenuCommandBuilder } = require('@discordjs/builders');
 module.exports = {
@@ -102,11 +92,8 @@ module.exports = {
 	},
 }
 ```
-</details>
 
-<details>
-  <summary>Buttons format</summary>
-  
+Buttons format
 Adding buttons to a message:
 ```js
 const { MessageButton, MessageActionRow } = require('discord.js')
@@ -123,7 +110,6 @@ module.exports = {
 		})
 }
 ```
-
 Button event:
 ```js
 module.exports = {
@@ -136,11 +122,8 @@ module.exports = {
 			})
 		}
 ```
-</details>
 
-<details>
-  <summary>Select menu format</summary>
-  
+Select menu format
 Adding select menu to a message:
 ```js
 const { MessageSelectMenu, MessageActionRow } = require('discord.js')
@@ -171,7 +154,6 @@ const row = new MessageActionRow().addComponents(selectMenu)
 		})
 }
 ```
-
 Select menu event:
 ```js
 module.exports = {
@@ -184,10 +166,8 @@ module.exports = {
 	},
 }
 ```
-</details>
 
-<details>
-  <summary>Permissions/Cooldown format</summary>
+Permissions/Cooldown format
   
 ```js
 const { SlashCommandBuilder } = require('@discordjs/builders');
@@ -204,11 +184,8 @@ module.exports = {
 	}
 }
 ```
-</details>
 
-<details>
-  <summary>Legacy commands format</summary>
-  
+Legacy commands format
 ```js
 module.exports = {
 	name: 'commandName',
@@ -219,7 +196,6 @@ module.exports = {
 	},
 }
 ```
-</details>
 
 ## Support & Documentation
 
