@@ -1,7 +1,7 @@
 ![Logo](https://i.imgur.com/89Lv73l.png)
 ---
 <p align="center">
-	<img src="https://img.shields.io/badge/Version-v1.0-22AFF5?style=flat-square&logo=git&logoColor=white" alt="Version" />
+	<img src="https://img.shields.io/badge/Version-v1.0.0-22AFF5?style=flat-square&logo=git&logoColor=white" alt="Version" />
 	<img src="https://img.shields.io/badge/License-GPL--3.0-22AFF5?style=flat-square&logo=Open-Source-Initiative&logoColor=white" alt="License" />
 	<a href="https://ko-fi.com/B0B73WFJT"><img src="https://img.shields.io/badge/Ko--fi-Buy_Me_A_Coffee-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white" alt="Ko-fi" /><a>
 </p>
