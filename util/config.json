@@ -1,0 +1,12 @@
+{
+	"prefix": "!",
+	"guildID": "1234567890123456789",
+	"clientID": "1234567890123456789",
+	"redTick": "<:error:798129044800929802>",
+	"greenTick": "<:success:798129647841706017>",
+	"CustomEmoji": "<:emoji-name:emoji-ID>",
+	"red": "#F14948",
+	"green": "#45B681",
+	"lightBlue": "#00D2FF",
+	"darkGreen": "#008369"
+}
