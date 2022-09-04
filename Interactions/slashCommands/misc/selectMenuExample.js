@@ -1,4 +1,4 @@
-const { MessageSelectMenu, MessageActionRow } = require('discord.js')
+const { SelectMenuBuilder, ActionRowBuilder } = require('discord.js')
 const { SlashCommandBuilder } = require('@discordjs/builders')
 const { lightBlue } = require(`../../../util/config.json`)
 const { customEmbed } = require(`../../../util/embed`)
@@ -10,7 +10,7 @@ module.exports = {
         .setDescription('An example command to show how to create select menus.'),
     cooldown: 5000,
     async execute(interaction) {
-        let selectMenu = new MessageSelectMenu()
+        let selectMenu = new SelectMenuBuilder()
             .setCustomId('select_example')
             .setPlaceholder('Nothing selected')
             .setMinValues(1)
@@ -39,7 +39,7 @@ module.exports = {
                     emoji: '4️⃣',
                 },
             ])
-        const row = new MessageActionRow().addComponents(selectMenu)
+        const row = new ActionRowBuilder().addComponents(selectMenu)
         interaction.reply({
             embeds: [customEmbed('This is an example of a select menu.', lightBlue)],
             components: [row],

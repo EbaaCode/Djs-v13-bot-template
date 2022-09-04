@@ -1,7 +1,10 @@
-const { MessageButton, MessageActionRow } = require('discord.js')
+const { ButtonBuilder, ActionRowBuilder } = require('discord.js')
 const { SlashCommandBuilder } = require('@discordjs/builders')
 const { lightBlue } = require(`../../../util/config.json`)
 const { customEmbed } = require(`../../../util/embed`)
+const { ButtonStyle } = require('discord.js');
+
+
 
 //? Using Buttons Example.
 module.exports = {
@@ -10,27 +13,28 @@ module.exports = {
 		.setDescription('An example command to show how to create buttons.'),
 	cooldown: 5000,
 	async execute(interaction) {
-		let primaryButton = new MessageButton()
+		let primaryButton = new ButtonBuilder()
 			.setLabel('Primary')
-			.setStyle('PRIMARY')
+			.setStyle(ButtonStyle.Primary)
 			.setCustomId('blurple_button')
-		let secondaryButton = new MessageButton()
+		let secondaryButton = new ButtonBuilder()
 			.setLabel('Cancel')
-			.setStyle('SECONDARY')
+			.setStyle(ButtonStyle.Secondary)
 			.setCustomId('grey_button')
-		let successButton = new MessageButton()
+		let successButton = new ButtonBuilder()
 			.setLabel('Success')
-			.setStyle('SUCCESS')
+			.setStyle(ButtonStyle.Success)
 			.setCustomId('green_button')
-		let dangerButton = new MessageButton()
+		let dangerButton = new ButtonBuilder()
 			.setLabel('Danger')
-			.setStyle('DANGER')
+			.setStyle(ButtonStyle.Danger)
 			.setCustomId('red_button')
-		let linkButton = new MessageButton()
+		let linkButton = new ButtonBuilder()
 			.setLabel('Link')
-			.setStyle('LINK')
+			.setStyle(ButtonStyle.Link)
 			.setURL('https://ebaa.dev')
-		const row = new MessageActionRow().addComponents(
+
+		const row = new ActionRowBuilder().addComponents(
 			primaryButton,
 			secondaryButton,
 			successButton,

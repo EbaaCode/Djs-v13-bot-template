@@ -4,7 +4,7 @@ module.exports = {
 	name: 'interactionCreate',
 	once: false,
 	async execute(interaction, client) {
-		if (interaction.isCommand() || interaction.isContextMenu()) slashInteraction(interaction, client)
+		if (interaction.isCommand() || interaction.isContextMenuCommand()) slashInteraction(interaction, client)
 		else if (interaction.isButton()) buttonInteraction(interaction, client)
 		else if (interaction.isSelectMenu()) selectMenuInteraction(interaction, client)
 	},
@@ -40,6 +40,7 @@ async function slashInteraction(interaction, client) {
 			content: '`An error has occurred while executing this command.`',
 			ephemeral: true,
 		})
+		
 	}
 }
 

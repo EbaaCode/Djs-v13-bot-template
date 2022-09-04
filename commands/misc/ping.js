@@ -1,17 +1,19 @@
-const { MessageEmbed } = require('discord.js')
+const { EmbedBuilder, Client } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const { green, greenTick } = require(`../../util/config.json`)
 
-//? A simple ping message prefix command.
+//? A simple ping slash command.
 module.exports = {
-	name: 'ping',
-	aliases: ['p', 'pong'],
-	description: 'Prefix ping command example',
+	data: new SlashCommandBuilder()
+		.setName('ping')
+		.setDescription('Slash command ping example.'),
 	cooldown: 5000,
-	async execute(message) {
-		const embed = new MessageEmbed().setColor(green).setDescription('Calculating ping...')
-		message.reply({ embeds: [embed], allowedMentions: { repliedUser: false } }).then((resultMessage) => {
-			embed.setDescription(greenTick + ' Pong! ' + `\`${resultMessage.createdTimestamp - message.createdTimestamp}ms\``)
-			resultMessage.edit({ embeds: [embed] })
-		})
-	},
+	async execute(interaction) {
+		const embed = new EmbedBuilder()
+			.setColor(green)
+			.setDescription('Calculating ping...')
+		const loadingMessage = await interaction.reply({ embeds: [embed], fetchReply: true })
+		embed.setDescription(greenTick + ' Pong! ' + `\`${loadingMessage.createdTimestamp - interaction.createdTimestamp}ms\``)
+		interaction.editReply({ embeds: [embed] })
+	}
 }

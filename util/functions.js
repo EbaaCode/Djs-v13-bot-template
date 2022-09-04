@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs')
-const { Permissions } = require('discord.js')
+const { PermissionFlagsBits } = require('discord.js')
 const { errorEmbed, customEmbed } = require(`./embed`)
 const { redTick, red, errorImage } = require(`./config.json`)
 
@@ -55,7 +55,7 @@ function permissions(interaction, collection) {
 	if (collection.permissions && collection.permissions.length) {
 		let invalidPermissionsFlags = []
 		for (const permission of collection.permissions) {
-			if (!interaction.member.permissions.has(Permissions.FLAGS[permission])) {
+			if (!interaction.member.permissions.has(PermissionFlagsBits.permission)) {
 				invalidPermissionsFlags.push(permission)
 			} else {
 				return false
