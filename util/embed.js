@@ -3,7 +3,7 @@ const { EmbedBuilder } = require('discord.js')
 
 //? Error Embed.
 function errorEmbed(interaction, description, footer) {
-	if (footer == undefined) footer = null
+	if (footer == undefined) footer = " "
 	const errorEmbed = new EmbedBuilder()
 		.setDescription(redTick + ` ${description}`)
 		.setColor(red)
@@ -12,7 +12,7 @@ function errorEmbed(interaction, description, footer) {
 }
 //? Success Embed.
 function successEmbed(interaction, description, footer) {
-	if (footer == undefined) footer = null
+	if (footer == undefined) footer = " "
 	const successEmbed = new EmbedBuilder()
 		.setDescription(greenTick + ` ${description}`)
 		.setColor(green)
@@ -21,9 +21,9 @@ function successEmbed(interaction, description, footer) {
 }
 //? Custom Embed.
 function customEmbed(description, color, emoji, thumbnail, footer) {
-	if (emoji == undefined) emoji = null
+	if (emoji == undefined) emoji = " "
 	if (thumbnail == undefined) thumbnail = null
-	if (footer == undefined) footer = null
+	if (footer == undefined) footer = " "
 	const customEmbed = new EmbedBuilder()
 		.setDescription(emoji + ` ${description}`)
 		.setColor(color)

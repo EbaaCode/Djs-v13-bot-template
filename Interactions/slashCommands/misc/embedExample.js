@@ -11,7 +11,7 @@ module.exports = {
         errorEmbed(interaction, 'Error embed example description', 'Error embed example footer')
         interaction.channel.send({
             embeds: [
-                customEmbed('Custom embed example description', lightBlue, null, null, 'Custom embed example footer'),
+                customEmbed('Custom embed example description', lightBlue, undefined, undefined, 'Custom embed example footer'),
             ],
         })
     },
