@@ -39,7 +39,7 @@ async function slashInteraction(interaction, client) {
 		await interaction.reply({
 			content: '`An error has occurred while executing this command.`',
 			ephemeral: true,
-		})	
+		})
 	}
 }
 
